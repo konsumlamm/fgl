@@ -7,11 +7,10 @@ maintainer:    athas@sigkill.dk
 category:      Data Structures, Graphs
 synopsis:      Martin Erwig's Functional Graph Library
 
-description:   {
-An inductive representation of manipulating graph data structures.
-.
-Original website can be found at <http://web.engr.oregonstate.edu/~erwig/fgl/haskell>.
-}
+description:
+    An inductive representation of manipulating graph data structures.
+    .
+    Original website can be found at <http://web.engr.oregonstate.edu/~erwig/fgl/haskell>.
 cabal-version: >= 1.10
 build-type:    Simple
 extra-source-files:
@@ -25,12 +24,11 @@ source-repository head
     type:         git
     location:     https://github.com/haskell/fgl.git
 
-flag containers042 {
+flag containers042
     manual:  False
     default: True
-}
 
-library {
+library
     default-language: Haskell98
 
     exposed-modules:
@@ -82,9 +80,7 @@ library {
 
     ghc-options:      -Wall
 
-}
-
-test-suite fgl-tests {
+test-suite fgl-tests
     default-language: Haskell98
 
     type:             exitcode-stdio-1.0
@@ -109,9 +105,7 @@ test-suite fgl-tests {
     if impl(ghc >= 8.0)
       ghc-options:    -Wall -Wno-star-is-type
 
-}
-
-benchmark fgl-benchmark {
+benchmark fgl-benchmark
     if flag(containers042)
         buildable:    True
     else
@@ -133,5 +127,3 @@ benchmark fgl-benchmark {
                     , deepseq
 
     ghc-options:      -Wall
-
-}
